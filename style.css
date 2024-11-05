@@ -3,36 +3,37 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #FBFBFB;
     margin: 0;
-    padding-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
-    background-color: rgb(246, 125, 186);
-    height: 2px;
+    display: flex;
+    background-color: transparent;
+    height: 80px;
     width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    transition: background-color 1.0s ease;
+    border: 1px solid white;
+
 }
 
 .header-container {
     display: flex;
-    align-items: center;
-    width: 80%;
-    margin: 20px auto 0; 
+    width: 100%;
 }
 
 .logo {
     width: 100px;
-    height: auto;
+    display: flex;
+    align-self: flex-end;
+    margin-left: 10px;
 }
 
 .navbar {
     display: flex;
     align-items: center;
+    justify-items: end;
+    align-items: end;   
     margin-left: 20px;
 }
 
@@ -77,24 +78,35 @@ body {
 }
 
 .conteudoN {
-    margin-top: 20px;
     text-align: center;
 } 
 .containerT {
-
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20%;
-
 }
 .footer {
 
     display: flex;
-    background-color: aquamarine;
+    background-color: rgb(201, 237, 225);
     height: 50px;
     align-items: center;
     justify-content: center;
     margin-top: 40%;
+
+}
+.containerT .texto h2 {
+
+display: flex;
+
+}
+.containerT .texto2 h2 {
+
+    display: flex;
+    
+}
+    .containerT .texto3 h2 {
+
+        display: flex;
 
 }
