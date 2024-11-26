@@ -95,8 +95,8 @@ body {
     align-items: center;
     justify-content: center;
     bottom: 0;
-    width: 100%;
-    margin-top: 0.5%;
+    width: 100vw;
+    margin-top: 0.01%;
 }
 .conteudoN {
     margin-top: 200px;
@@ -339,10 +339,154 @@ background-position: 60% 10%;
 .header-container2 {
     display: flex;
     width: 100%;
+
 } .logo2 {
     width: 100px;
     display: flex;
     align-self: flex-end;
     margin-left: 10px;
     margin-top: 27px;
+
+} .container-cadastro {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 440px;
+    top: 40px;
+    height: 550px;
+    width: 450px;
+    background-color: #3392CA;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(240, 239, 239, 0.2);
+    padding: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
 }
+
+.cadastro {
+    display: flex;
+    position: relative;
+    top: 100px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+
+}.campo-cadastro {
+
+display: flex;
+position: relative;
+flex-direction: column;
+bottom: 70px;
+
+
+}.cadastro-titulo {
+    color: white; 
+    margin-bottom: 15px;
+    position: relative;
+    bottom: 70px;
+    font-weight: bold; 
+    font-size: 25px;
+    border-radius: 1px;
+    display: flex;
+
+} .container-login {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 550px;
+    top: 110px;
+    height: 300px;
+    width: 450px;
+    background-color: #3392CA;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(240, 239, 239, 0.2);
+    padding: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.login {
+    display: flex;
+    position: relative;
+    top: 90px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+
+}.login-titulo {
+    color: white; 
+    margin-bottom: 20px;
+    bottom: 60px;
+    font-weight: bold; 
+    font-size: 25px;
+    border-radius: 1px;
+    display: flex;
+    position: relative;
+
+} .campo-login {
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    bottom: 60px;
+
+
+}.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.campo span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.botao {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+    .campo input {
+        padding: 10px;
+    }
+
+    .botao {
+        padding: 10px;
+    }
+
