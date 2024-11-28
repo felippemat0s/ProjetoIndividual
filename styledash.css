@@ -1,0 +1,49 @@
+.faixa-sidebar img{
+
+width: 90px;
+height: 90px;
+
+}.faixa-sidebar {
+width: 30vh;
+height: 100vh;
+display: flex;
+flex-direction: column;
+background-color: #995CD0;
+align-items: center;
+justify-content: space-evenly;
+
+}body {
+
+margin: 0px;
+display: flex;
+background-color: #201d30;
+
+}.faixa-sidebar img:hover {
+
+cursor: pointer;
+scale: 1.1;
+} span {
+
+color: white;
+font-weight: bolder;
+font-size: x-large;
+margin-left: 5px;
+
+}#seta {
+
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+
+}.div_seta {
+
+display: flex;
+margin-top: 5px;
+flex-direction: column;
+margin-left: 5px;
+}#seta:hover {
+
+    cursor: pointer;
+    scale: 1.1;
+
+}
