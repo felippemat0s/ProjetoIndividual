@@ -1,10 +1,10 @@
 .faixa-sidebar img{
 
-width: 90px;
-height: 90px;
+width: 70px;
+height: 70px;
 
 }.faixa-sidebar {
-width: 30vh;
+width: 25vh;
 height: 100vh;
 display: flex;
 flex-direction: column;
@@ -41,9 +41,127 @@ display: flex;
 margin-top: 5px;
 flex-direction: column;
 margin-left: 5px;
+
 }#seta:hover {
 
     cursor: pointer;
     scale: 1.1;
 
+} .interacao img{
+
+    width: 200px;
+    height: 200px; 
+}.interacao {
+
+    width: 100vh;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(100deg, #8EDF5F, #5549B7, #EC7744);
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 18vh;
+
+}.interacao img:hover {
+
+    cursor: pointer;
+    scale: 1.1;
+
+}.caixa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 20vh;
+
+}#quizzInteiro {
+
+display: flex;
+align-items: center;
+justify-content: center;
+align-items: flex-start;
+flex-direction: column;
+position: relative;
+left: 24%;
+top: 50%;
+
+}#botaoQuizz {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #00ff00;
+    background-color: #5549B7;
+    border: 3px solid #8EDF5F;
+    border-radius: 12px;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+
+}#botaoQuizz:hover {
+    background-color: #8EDF5F;
+    color: #201d30;
+    border: 3px solid #201d30;
+    transform: scale(1.05);
+
+} input[type="radio"] {
+    accent-color: #8EDF5F;
+    margin-right: 10px;
+
+}.flex-colunar {
+    display: flex;
+    flex-direction: column;
+
+} #jogo {
+    width: fit-content;
+    max-width: 80vw;
+    margin: 40px;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #995CD0;
+
+}#infoQuestao, #perguntaDaQuestaoAtual, #infoAlternativas {
+        margin-bottom: 20px;
+        color: #070707;
+        font-size: 1.2rem;
+
+} #pontuacao {
+    background-color: #2c2c2c;
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+#pontuacaoDuranteJogo, #pontuacaoFinalJogo {
+    margin-bottom: 10px;
+}
+
+#pontuacaoFinal {
+    font-weight: bold;
+
+} button {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #5549B7;
+    border: 2px solid #8EDF5F;
+    margin-bottom: 5px;
+    margin-top: 8px;
+    border-radius: 10px;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8EDF5F;
+    color: #201d30;
+    scale: 1.03
+}
+
+button:active {
+    color: #ffffff;
+    scale: 1.03
+
+}#jogo span, #jogo label {
+    color: #000;
 }
