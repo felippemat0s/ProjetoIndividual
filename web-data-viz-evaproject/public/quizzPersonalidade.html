@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The EVA Project | Qual piloto você se identifica?</title>
+    <link rel="stylesheet" href="./css/styledash.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="faixa-sidebar">
+        <img onclick="ir_quizz()" src="./assets/imgs/quizz_icon.png" alt="">
+        <img onclick="ir_chart()" src="./assets/imgs/chart_icon.png" alt="">
+        <img onclick="ir_home()" src="./assets/imgs/logout.png" alt="">
+    </div>
+    <div class="div_seta">
+    <img id="seta" onclick="voltar_quizzC()" src="./assets/imgs/seta_eva.png" alt="">
+</div>
+<div id="jogoQuizz">
+<button id="botaoQuizzPerso" onclick="iniciarQuiz()">INICIAR QUIZZ</button>
+<div id="quizzTodo">
+<div id="pergunta">
+<div class="resposta" id="resposta1">
+<div class="resposta" id="resposta2">
+<div class="resposta" id="resposta3">
+<div class="resposta" id="resposta4">
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+<script src="./js/quizzPersonalidade.js"></script>
