@@ -285,6 +285,7 @@ function finalizarJogo() {
     document.getElementById('pontuacao').style.display = "flex"
     document.getElementById('jogo').style.display = "none"
     textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
+    console.log(pontuacaoFinal)
 
 
     document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
@@ -295,6 +296,21 @@ function finalizarJogo() {
     btnSubmeter.disabled = true
     // btnConcluir.disabled = true
     btnTentarNovamente.disabled = false
+
+    fetch("quizz/conhecimento", {
+        method: 'POST',  
+        body: JSON.stringify({
+            qtdAcertos: pontuacaoFinal, qtdErros: 10-pontuacaoFinal, idUsuario: sessionStorage.ID_USUARIO
+        }),  headers: { "Content-type": "application/json"}
+    }).then((resposta)=>{
+        if(resposta.ok){
+           console.log('Deu certo')
+        } else {
+        texto.innerHTML= 'Houve um erro.'
+        }
+    }).catch((erro)=>{
+        console.log(erro)
+    })
 
 }
 

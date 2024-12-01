@@ -14,7 +14,6 @@ CREATE TABLE quizzConhecimento (
     idQuizz INT AUTO_INCREMENT PRIMARY KEY,
     qtdAcertos INT,
     qtdErros INT,
-    qtdQuestoes INT,
     fkUsuario INT,
     FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
         
@@ -23,9 +22,7 @@ CREATE TABLE quizzConhecimento (
 
 CREATE TABLE quizzPersonalidade (
     idQuizzPerso INT AUTO_INCREMENT PRIMARY KEY,
-    qtdAcertos INT,
-    qtdErros INT,
-    qtdQuestoes VARCHAR(45),
+    persoFav CHAR(7),
     fkUsuario INT,
     FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 );
@@ -33,7 +30,6 @@ CREATE TABLE quizzPersonalidade (
 CREATE TABLE votacao (
     idVotacao INT AUTO_INCREMENT PRIMARY KEY,
     persoVotado INT,
-    votacaoCol VARCHAR(45),
     fkUsuario INT,
     FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 );

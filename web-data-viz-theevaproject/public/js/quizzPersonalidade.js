@@ -222,4 +222,21 @@ function exibirResultado() {
         document.getElementById('resultado4').style.display = "block"
 
     }
+
+    console.log(personagemMaisVotado)
+    console.log(maxPontos)
+    fetch("quizz/personalidade", {
+        method: 'POST',  
+        body: JSON.stringify({
+        persoFav: personagemMaisVotado, idUsuario: sessionStorage.ID_USUARIO
+        }),  headers: { "Content-type": "application/json"}
+    }).then((resposta)=>{
+        if(resposta.ok){
+           console.log('Deu certo')
+        } else {
+        texto.innerHTML= 'Houve um erro.'
+        }
+    }).catch((erro)=>{
+        console.log(erro)
+    })
 }
