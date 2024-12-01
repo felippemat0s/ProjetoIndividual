@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The EVA Project | Qual piloto você se identifica?</title>
+    <link rel="stylesheet" href="./css/styledash.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="faixa-sidebar">
+        <img onclick="ir_quizz()" src="./assets/imgs/quizz_icon.png" alt="Ir para quiz">
+        <img onclick="ir_chart()" src="./assets/imgs/chart_icon.png" alt="Ir para gráfico">
+        <img onclick="ir_home()" src="./assets/imgs/logout.png" alt="Logout">
+    </div>
+    
+    <div class="div_seta">
+        <img id="seta" onclick="voltar_quizzC()" src="./assets/imgs/seta_eva.png" alt="Voltar">
+    </div>
+    <div class="titulos">
+        <p class="titulos-italicos">VOTE NO SEU</p>
+        <h1>PERSONAGEM FAVORITO</h1>
+      </div>
+      <div class="personagens">
+        <div class="personagem" onclick="votar(0)">
+          <img
+            src="./img/animal-crossing.png"
+            alt=""
+            width="200px"
+            height="300px"
+          />
+          <p>Shinji Ikari</p>
+        </div>
+        <div class="personagem" onclick="votar(1)">
+          <img src="./img/doom.jpeg" alt="" width="200px" height="300px" />
+          <p>Rei Ayanami</p>
+        </div>
+        <div class="personagem" onclick="votar(2)">
+          <img
+            src="./img/final-fantasy.jpg"
+            alt=""
+            width="200px"
+            height="300px"
+          />
+          <p>Misato Katsuragi</p>
+        </div>
+        <div class="personagem" onclick="votar(3)">
+          <img
+            src="./img/ghost-of-tsushima.png"
+            alt=""
+            width="200px"
+            height="300px"
+          />
+          <p>Kaworu Nagisa</p>
+        </div>
+        <div class="personagem" onclick="votar(4)">
+          <img src="./img/hades.png" alt="" width="200px" height="300px" />
+          <p>Mari Makinami</p>
+        </div>
+        <div class="personagem" onclick="votar(5)">
+          <img
+            src="./img/the-last-of-us.png"
+            alt=""
+            width="200px"
+            height="300px"
+          />
+          <p>Gendo Ikari</p>
+        </div>
+      </div>
+    <script src="./js/votacao.js"></script>

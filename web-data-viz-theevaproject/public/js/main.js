@@ -27,3 +27,14 @@ function ir_quizzPersonalidade() {
     window.location.href='quizzPersonalidade.html'
 
 }
+
+function ir_votacao() {
+
+    window.location.href='votacao.html'
+
+}
+
+function carregarInterativo() {
+
+    b_usuario.innerHTML = sessionStorage.NOME
+}

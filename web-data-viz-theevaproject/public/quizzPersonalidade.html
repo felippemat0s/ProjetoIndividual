@@ -9,26 +9,53 @@
 </head>
 <body>
     <div class="faixa-sidebar">
-        <img onclick="ir_quizz()" src="./assets/imgs/quizz_icon.png" alt="">
-        <img onclick="ir_chart()" src="./assets/imgs/chart_icon.png" alt="">
-        <img onclick="ir_home()" src="./assets/imgs/logout.png" alt="">
+        <img onclick="ir_quizz()" src="./assets/imgs/quizz_icon.png" alt="Ir para quiz">
+        <img onclick="ir_chart()" src="./assets/imgs/chart_icon.png" alt="Ir para gráfico">
+        <img onclick="ir_home()" src="./assets/imgs/logout.png" alt="Logout">
     </div>
+    
     <div class="div_seta">
-    <img id="seta" onclick="voltar_quizzC()" src="./assets/imgs/seta_eva.png" alt="">
-</div>
-<div id="jogoQuizz">
-<button id="botaoQuizzPerso" onclick="iniciarQuiz()">INICIAR QUIZZ</button>
-<div id="quizzTodo">
-<div id="pergunta">
-<div class="resposta" id="resposta1">
-<div class="resposta" id="resposta2">
-<div class="resposta" id="resposta3">
-<div class="resposta" id="resposta4">
-</div>
-</div>
-</div>
-</div>
-</div>
+        <img id="seta" onclick="voltar_quizzC()" src="./assets/imgs/seta_eva.png" alt="Voltar">
+    </div>
+    
+    <div id="jogoQuizz">
+        <button id="botaoQuizzPerso" onclick="exibirPerguntas()">INICIAR QUIZZ</button>
+        <div id="quizzTodo" style="display: none;">
+            <div id="pergunta"></div>
+            <div class="resposta" id="resposta1"></div>
+            <div class="resposta" id="resposta2"></div>
+            <div class="resposta" id="resposta3"></div>
+            <div class="resposta" id="resposta4"></div>
+        </div>
+        <div id="resultadoTodo">
+        <div id="resultado1">
+            <div id="imagem1">
+            </div>
+            <div class="texto1">
+            </div>
+        </div>
+        <div id="resultado2">
+            <div id="imagem2">
+            </div>
+            <div class="texto2">
+            </div>
+        </div>
+        <div id="resultado3">
+            <div id="imagem3">
+            </div>
+            <div class="texto3">
+            </div>
+        </div>
+        <div id="resultado4">
+            <div id="imagem4">
+            </div>
+            <div class="texto4">
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+    <script src="./js/quizzPersonalidade.js"></script>
 </body>
 </html>
-<script src="./js/quizzPersonalidade.js"></script>

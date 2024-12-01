@@ -15,6 +15,9 @@ function voltar_quizzC() {
         window.location.href='dashboard.html'
         
         }
+        function ir_quizz() {
+            window.location.href='interativo.html';
+        }
 
 const listaDeQuestoes = [
 
