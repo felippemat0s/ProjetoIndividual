@@ -291,74 +291,90 @@ button:active {
     padding: 12px 24px;
     transition: all 0.3s ease; 
 
+}#botaoQuizzPerso:hover {
+    background-color: #8EDF5F;
+    color: #201d30;
+    border: 3px solid #201d30;
+    transform: scale(1.05);
+
+
 }#resultadoTodo {
 width: fit-content;
-max-width: 80vw;
+max-width: 50vw;
 display: flex;
+position: relative;
+right: 180px;
 border-radius: 10px;
 background-color: #995CD0;
 
 }#resultado1 {
     color: #1603a3;
     max-width: 100vw;
+    position: relative;
+    left: 15px;
     display: none;
-    margin-left: 10px;
-    margin-right: 10px;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
 
 }#resultado2 {
     color: #10d3f1;
     max-width: 100vw;
+    position: relative;
+    left: 15px;
     display: none;
-    margin-left: 10px;
-    margin-right: 10px;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
 
 }#resultado3 {
     color: #111111;
     max-width: 100vw;
+    position: relative;
+    left: 15px;
     display: none;
-    margin-left: 10px;
-    margin-right: 10px;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
 
 }#resultado4 {
     color: #f11010;
     max-width: 100vw;
+    position: relative;
+    left: 15px;
     display: none;
-    margin-left: 10px;
-    margin-right: 10px;
-
-}.imagem1 {
-    background-image: url('../assets/imgs/noticia1.png');
-width: 500px;
-height: 200px;
-display: flex;
-position: relative;
-left: 60px;
-
-}.imagem2 {
-    background-image: url('../assets/imgs/noticia1.png');
-width: 500px;
-height: 200px;
-left: 60px;
-display: flex;
-position: relative;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}.imagem1, .imagem2, .imagem3, .imagem4 {
+        width: 500px;
+        height: 500px; 
+        display: flex;
+        margin-bottom: 8px; 
+        position: relative;
+        left: 100px; 
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }.imagem1 {
+        background-image: url('../assets/imgs/shinjiperso.jpg');
+    }
     
-}.imagem3 {
-    background-image: url('../assets/imgs/noticia1.png');
-width: 500px;
-height: 200px;
-left: 60px;
-display: flex;
-position: relative;
+    .imagem2 {
+        background-image: url('../assets/imgs/reiperso.jpg');
+    }
     
-}.imagem4 {
-    background-image: url('../assets/imgs/noticia1.png');
-width: 500px;
-height: 200px;
-display: flex;
-position: relative;
-left: 60px;
-
-}.texto1 {
+    .imagem3 {
+        background-image: url('../assets/imgs/kaworuperso.jpg');
+    }
+    
+    .imagem4 {
+        background-image: url('../assets/imgs/asukaperso.jpg');
+    } .texto1 {
     color: black;
     justify-content: center;
     display: flex;
@@ -392,9 +408,7 @@ left: 60px;
 .titulos-italicos {
   font-style: italic;
   color: #cccccc;
-}
-
-h1 {
+}#tituloPersonagens {
   font-size: 2.5rem;
   margin: 10px 0;
   color: #8EDF5F;
