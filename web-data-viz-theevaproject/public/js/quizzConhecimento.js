@@ -297,3 +297,4 @@ function finalizarJogo() {
     btnTentarNovamente.disabled = false
 
 }
+
