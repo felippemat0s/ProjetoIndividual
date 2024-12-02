@@ -19,4 +19,12 @@ router.post("/votar/:nomePerso", function (req, res) {
     quizzController.obterVotosAtualizados(req, res);
   });
 
+  router.get("/personalidadegrafico", function (req, res) {
+    quizzController.obterPersonagensAtualizados(req, res);
+  });
+
+  router.get("/kpis:idUsuario", function (req, res) {
+    quizzController.obterKPIs(req, res);
+  });
+
 module.exports = router;

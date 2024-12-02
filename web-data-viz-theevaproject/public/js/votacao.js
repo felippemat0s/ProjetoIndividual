@@ -4,6 +4,7 @@ function voltar_quizzC() {
 
 function ir_home() {
     window.location.href='index.html';
+    sessionStorage.clear();
 } 
 
 function ir_chart() {
@@ -25,6 +26,7 @@ function votar(nomePerso) {
           console.log(`Voto contabilizado`);
         } else {
           console.error("Erro na votação ou personagem não encontrado");
+          alert('Limite de votos atingidos.')
         }
       })
       .catch(function (error) {

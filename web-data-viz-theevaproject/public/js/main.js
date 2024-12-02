@@ -6,6 +6,7 @@ window.location.href='interativo.html'
 
 function ir_home() {
 
+    sessionStorage.clear();
 window.location.href='index.html'
 
 } 

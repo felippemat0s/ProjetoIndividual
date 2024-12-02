@@ -6,6 +6,7 @@ function ir_quizz(){
     
     function ir_home() {
     
+      sessionStorage.clear();
     window.location.href='index.html'
     
     } 
@@ -39,7 +40,8 @@ function ir_quizz(){
         b_usuario.innerHTML = sessionStorage.NOME
     }
     
-    let myChart;
+    var myChart;
+    var myChart2;
 
     function obterDadosGrafico() {
       fetch(`/quizz/ultimos`, { cache: "no-store" })
@@ -116,30 +118,10 @@ function ir_quizz(){
         },
       };
     
-      // Verifica se um gráfico já existe e o destrói antes de criar um novo
+
       const ctx = document.getElementById("myCanvas").getContext("2d");
       if (myChart) myChart.destroy();
       myChart = new Chart(ctx, config);
-    }
-    
-    
-    function atualizarVoto(nomePerso, idUsuario) {
-      fetch(`/quizz/votar`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nomePerso, idUsuario }),
-      })
-        .then((response) => {
-          if (response.ok) {
-            console.log("Voto registrado com sucesso!");
-            atualizarGrafico();
-          } else {
-            console.error("Erro ao registrar o voto.");
-          }
-        })
-        .catch((error) => {
-          console.error(`Erro ao registrar o voto: ${error.message}`);
-        });
     }
     
     function atualizarGrafico() {
@@ -159,6 +141,122 @@ function ir_quizz(){
           console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
         });
     }
+
+    function obterDadosGraficoPizza() {
+      fetch(`/quizz/personalidadegrafico`, { cache: "no-store" })
+        .then((response) => {
+          if (response.ok) {
+            response.json().then((resposta) => {
+              console.log(`Dados recebidos para o gráfico de pizza: ${JSON.stringify(resposta)}`);
+              plotarGraficoPizza(resposta);
+            });
+          } else {
+            console.error("Nenhum dado encontrado ou erro na API");
+          }
+        })
+        .catch((error) => {
+          console.error(`Erro na obtenção dos dados p/ gráfico de pizza: ${error.message}`);
+        });
+    }
+    
+    function plotarGraficoPizza(resposta) {
+      console.log("Iniciando plotagem do gráfico de pizza...");
+    
+      const labels = resposta.map((item) => item.personagem); // Labels dos personagens
+      const dataValues = resposta.map((item) => item.quantidade); // Valores das quantidades
+    
+      const dados = {
+        labels: labels,
+        datasets: [
+          {
+            label: "Distribuição de Personalidades",
+            data: dataValues,
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(255, 159, 64, 0.2)",
+            ],
+            borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(255, 159, 64, 1)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
+    
+      const config = {
+        type: "pie", // Tipo de gráfico: Pizza
+        data: dados,
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: "Distribuição de Personalidades",
+              color: "#FFFFFF",
+              font: { size: 20 },
+            },
+            legend: {
+              display: true,
+              labels: { color: "white" },
+            },
+          },
+        },
+      };
+    
+      const ctx = document.getElementById("myCanvasPizza").getContext("2d");
+      if (myChart2) myChart2.destroy();
+      myChart2 = new Chart(ctx, config);
+    }    
+
+    function atualizarGraficoPersonagens() {
+      fetch(`/quizz/personalidadegrafico`, { cache: "no-store" })
+        .then((resposta) => {
+          if (resposta.ok) {
+            resposta.json().then((respostaJSON) => {
+              myChart2.data.labels = respostaJSON.map((item) => item.personagem);
+              myChart2.data.datasets[0].data = respostaJSON.map((item) => item.quantidade);
+              myChart2.update();
+            });
+          } else {
+            console.error("Nenhum dado encontrado ou erro na API");
+          }
+        })
+        .catch((error) => {
+          console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+    }
+
+    function atualizarKPIs() {
+      var idUsuario = sessionStorage.ID_USUARIO;
+      fetch(`/quizz/kpis${idUsuario}`, { cache: 'no-store' })
+          .then(response => {
+              if (response.ok) {
+                  response.json().then(kpis => {
+                      document.getElementById("ultimoTeste").innerText = kpis.ultimoTeste;
+                      document.getElementById("mediaAcertos").innerText = Number(kpis.mediaAcertos).toFixed(2);
+                      document.getElementById("mediaUsuario").innerText = Number(kpis.mediaUsuario).toFixed(2);
+                      document.getElementById("personagemMaisVotado").innerText = kpis.personagemMaisVotado;
+                      document.getElementById("personagemVotado").innerText = kpis.personagemVotado;
+                  });
+              } else {
+                  console.error("Erro ao buscar KPIs");
+              }
+          })
+          .catch(error => {
+              console.error("Erro na requisição de KPIs: ", error.message);
+          });
+  }
+  
     
     obterDadosGrafico();
-    
+    obterDadosGraficoPizza();
+    atualizarKPIs()

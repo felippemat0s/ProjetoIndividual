@@ -7,7 +7,7 @@ function voltar_quizzC() {
     function ir_home() {
 
         window.location.href='index.html'
-        
+        sessionStorage.clear();
         } 
         
         function ir_chart() {
