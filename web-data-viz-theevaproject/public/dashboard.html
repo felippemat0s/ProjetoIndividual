@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheEVAProject | Dashboard </title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="./css/styledash.css">
 </head>
 <body onload="carregarInterativo()">
@@ -12,12 +13,13 @@
         <img onclick="ir_chart()" src="./assets/imgs/chart_icon.png" alt="">
         <img onclick="ir_home()" src="./assets/imgs/logout.png" alt="">
     </div>
-    <!-- <div class="div_seta">
-    <img id="seta" onclick="ir_index()" src="assets/seta_eva.png" alt=""> -->
     <span>
 Olá, <span id="b_usuario">usuário</span>
     </span> 
-<!-- </div> -->
+    <div class="grafico">
+        <canvas id="myCanvas"></canvas>
+      </div>
 </body>
 </html>
-<script src="./js/main.js"></script>
+
+<script src="./js/dashboard.js"></script>

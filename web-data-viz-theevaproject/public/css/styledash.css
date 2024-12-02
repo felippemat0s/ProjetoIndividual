@@ -447,7 +447,12 @@ background-color: #995CD0;
 .personagem img:hover {
   transform: scale(1.05);
   border-color: #8EDF5F;
-}
+}.grafico {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+ }
 
 
 

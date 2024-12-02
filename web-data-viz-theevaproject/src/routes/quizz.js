@@ -11,4 +11,12 @@ router.post("/personalidade", function (req, res) {
     quizzController.finalizarPersonalidade(req, res);
 })
 
+router.post("/votar/:nomePerso", function (req, res) {
+    quizzController.votarPorNome(req, res);
+  });
+  
+  router.get("/ultimos", function (req, res) {
+    quizzController.obterVotosAtualizados(req, res);
+  });
+
 module.exports = router;

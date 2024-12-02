@@ -38,8 +38,46 @@ function finalizarPersonalidade(req, res) {
     });
 }
 
+function votarPorNome(req, res) {
+  var nomePerso = req.params.nomePerso;
+  var idUsuario = req.body.idUsuario;
+  
+  console.log("Personagem recebido:", nomePerso);
+
+  quizzModel.atualizarVoto(nomePerso, idUsuario)                            
+    .then(function (resultado) {                                
+      res.status(200).send("Voto contabilizado com sucesso!");
+    })
+    .catch(function (erro) {                                                
+      console.log(erro);                                                    
+      console.log("Houve um erro ao atualizar os votos.", erro.sqlMessage); 
+      res.status(500).json(erro.sqlMessage);                                
+    });              
+}
+
+function obterVotosAtualizados(req, res) {
+  console.log(`Buscando os votos...`);
+
+  quizzModel.buscarVotos()                                    
+    .then(function (resultado) {                             
+      if (resultado.length > 0) {                             
+        console.log(resultado);                               
+        res.status(200).json(resultado);                      
+      } else {                                                
+        res.status(204).send("Nenhum resultado encontrado!"); 
+      }
+    })
+    .catch(function (erro) {                                            
+      console.log(erro);                                                 
+      console.log("Houve um erro ao buscar os votos.", erro.sqlMessage); 
+      res.status(500).json(erro.sqlMessage);
+    });
+}
+
 module.exports = {
     finalizarConhecimento,
-    finalizarPersonalidade
+    finalizarPersonalidade,
+    votarPorNome,
+    obterVotosAtualizados,
 
 }

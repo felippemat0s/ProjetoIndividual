@@ -21,7 +21,35 @@ function finalizarPersonalidade(idUsuario, persoFav) {
     return database.executar(instrucaoSql);
 }
 
+function atualizarVoto(nomePerso, idUsuario) {
+    var instrucaoSql = `
+
+INSERT INTO votacao (persoVotado, quantidadeVotos, fkUsuario) VALUES
+
+ ('${nomePerso}', 1, ${idUsuario});
+      `;
+  
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+  }
+  
+  function buscarVotos() {
+    var instrucaoSql = `SELECT 
+    persoVotado AS personagem, 
+    COUNT(quantidadeVotos) AS votos 
+FROM 
+    votacao 
+GROUP BY 
+    persoVotado;
+`;
+  
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+  }
+
 module.exports = {
     finalizarConhecimento,
-    finalizarPersonalidade
+    finalizarPersonalidade,
+    atualizarVoto,
+    buscarVotos,
 }

@@ -13,10 +13,21 @@ function ir_quizz() {
     window.location.href='interativo.html';
 } 
 
-var votos = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+function votar(nomePerso) {
+  var idUsuario = sessionStorage.ID_USUARIO;
 
-function votar(persoIndex) {
-    votos[persoIndex] += 1; // incrementa os votos do vetor de votos, de acordo com o índice do jogo recebido como parâmetro
-    console.log(votos)
-
+  fetch(`/quizz/votar/${nomePerso}`, {
+      method: "POST", body: JSON.stringify({idUsuario: idUsuario}),
+      headers: { "Content-type": "application/json"}
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log(`Voto contabilizado`);
+        } else {
+          console.error("Erro na votação ou personagem não encontrado");
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro ao realizar o voto: ${error.message}`);
+      });
   }
