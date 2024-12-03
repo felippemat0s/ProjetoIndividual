@@ -6,7 +6,7 @@ function entrar() {
 
     if (email == "" || senha == "") {
         cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "Preencha todos os campos.";
+        texto.innerHTML = "Preencha todos os campos.";
         return false;
     }
     else {
@@ -24,7 +24,7 @@ function entrar() {
                     location.replace('/interativo.html')
                 })
             } else {
-            texto.innerHTML= 'Email ou senha inválidos.'
+        texto.innerHTML= 'Email ou senha inválidos.'
             }
         }).catch((erro)=>{
             console.log(erro)

@@ -217,7 +217,7 @@ body {
     color: black;
     
 }.carrossel {
-    width: 500px;
+    width: 700px;
     height: 500px;
 
 
@@ -519,8 +519,15 @@ color: white;
         top: 180px;
       }
       
-      .card_erro #mensagem_erro{
+      .card_erro #texto{
+        color: white;
         font-weight: 500;
         font-size: 20px;
-      }
+
+      } .gendo-text h5, .gendo-text p {
+        color: white;
+    } .kaworu-text h5, .kaworu-text p {
+        color: white;
+    }
+    
 

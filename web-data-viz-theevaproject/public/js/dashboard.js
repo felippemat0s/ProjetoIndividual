@@ -246,6 +246,7 @@ function ir_quizz(){
                       document.getElementById("mediaUsuario").innerText = Number(kpis.mediaUsuario).toFixed(2);
                       document.getElementById("personagemMaisVotado").innerText = kpis.personagemMaisVotado;
                       document.getElementById("personagemVotado").innerText = kpis.personagemVotado;
+                      document.getElementById("totalVotos").innerHTML = kpis.totalVotos;
                   });
               } else {
                   console.error("Erro ao buscar KPIs");

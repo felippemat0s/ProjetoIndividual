@@ -101,6 +101,15 @@ return database.executar(instrucaoSql);
 
 }
 
+function buscartotalVotos() {
+
+    var instrucaoSql = `select count(quantidadeVotos) as totalVotos from votacao;`;
+
+console.log("Executando a instrução SQL: \n" + instrucaoSql);
+return database.executar(instrucaoSql);
+
+}
+
 module.exports = {
     finalizarConhecimento,
     finalizarPersonalidade,
@@ -112,5 +121,6 @@ module.exports = {
     calcularMediaAcertosUsuario,
     buscarPersonagemMaisVotado,
     buscarPersonagemVotado,
+    buscartotalVotos,
 };
 

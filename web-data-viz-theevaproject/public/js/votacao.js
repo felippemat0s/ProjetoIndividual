@@ -24,6 +24,7 @@ function votar(nomePerso) {
       .then((response) => {
         if (response.ok) {
           console.log(`Voto contabilizado`);
+          alert('Voto único contabilizado.')
         } else {
           console.error("Erro na votação ou personagem não encontrado");
           alert('Limite de votos atingidos.')

@@ -103,15 +103,17 @@ function obterKPIs(req, res) {
       quizzModel.calcularMediaAcertos(),
       quizzModel.calcularMediaAcertosUsuario(idUsuario),
       quizzModel.buscarPersonagemMaisVotado(),
-      quizzModel.buscarPersonagemVotado(idUsuario)
+      quizzModel.buscarPersonagemVotado(idUsuario),
+      quizzModel.buscartotalVotos()
   ])
-  .then(function ([ultimoTeste, mediaAcertos, mediaUsuario, personagemMaisVotado, personagemVotado]) {
+  .then(function ([ultimoTeste, mediaAcertos, mediaUsuario, personagemMaisVotado, personagemVotado, totalVotos]) {
       if (
           !ultimoTeste.length &&
           !mediaAcertos.length &&
           !mediaUsuario.length &&
           !personagemMaisVotado.length &&
-          !personagemVotado.length
+          !personagemVotado.length &&
+          !totalVotos.length
       ) {
           res.status(204).send("Nenhum dado encontrado!");
       } else {
@@ -120,7 +122,8 @@ function obterKPIs(req, res) {
               mediaAcertos: mediaAcertos[0]?.mediaAcertos || 0,
               mediaUsuario: mediaUsuario[0]?.mediaAcertos || 0,
               personagemMaisVotado: personagemMaisVotado[0]?.personagem || "Nenhum voto registrado",
-              personagemVotado: personagemVotado[0]?.persoVotado || 'Não votou em ninguém'
+              personagemVotado: personagemVotado[0]?.persoVotado || 'Não votou em ninguém',
+              totalVotos: totalVotos[0]?.totalVotos || 'Não há votos',
           };
 
           console.log("KPIs obtidos:", kpis);
