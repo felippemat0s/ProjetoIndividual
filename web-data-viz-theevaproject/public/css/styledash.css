@@ -236,7 +236,7 @@ button:active {
     --new-white: #E8E8E8;
 
 } .text-success-with-bg {
-    color: var(--success-dark);
+    color: var(--success);
     background-color: var(--success-dark);
 }
 
